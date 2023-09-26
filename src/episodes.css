@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Poppins:wght@300;400;600;800&family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.episode-container {
+    padding: 4rem 1rem 1rem;
+}
+
+.list-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.episode-list {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    gap: .5rem;
+}
+
+.episode-elements:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.item-image {
+    min-width: 2rem;
+    min-height: 2rem;
+    background-image: url(./assets/images/vynil.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.episode-elements {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: .3rem 0;
+    gap: .2rem;
+    border-bottom: 1px solid black;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 700px) {
+    .list-player {
+        flex-direction: column;
+        flex-flow: column-reverse;
+        gap: 2rem;
+    }
+}

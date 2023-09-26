@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Poppins:wght@300;400;600;800&family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 70rem;
+    /* max-width: 100%; */
+    min-height: 30rem;
+    
+    margin: auto;
+    /* border: 1px solid green; */
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-player {
+    width: 50%;
+}
+
+.episode-details {
+    width: 50%;
+    height: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.episode-num {
+    font-weight: 300;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.episode-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.episode-summary {
+    max-width: 25rem;
+    font-weight: 400;
+}
+
+.more-episode-btn {
+    width: 8rem;
+    margin-top: 2rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--text-primary);
+    background-color: white;
+}
+
+.more-episode-btn:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    background-color: var(--text-primary);
+}
+
+.media-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    min-width: 230px;
+    height: 22rem;
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-illustration{
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid var(--text-primarytt);
+    border-radius: 10px;
+    background-image: url(./assets/images/vynil.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.audio-player {
+    width: 15rem;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    .episode-details {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .episode-summary {
+        width: 100%;
+    }
+
+    .card {
+        height: 17rem;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .card-illustration{
+        width: 8rem;
+        height: 8rem;
+    }
+    
+}
