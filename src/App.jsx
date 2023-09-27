@@ -11,10 +11,10 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/episodes" element={<Episodes/>}/>
+          <Route path="/podcast" element={<Home/>}/>
+          <Route path="/podcast/episodes" element={<Episodes/>}/>
           {/* <Route path="/articles" element={<Articles/>}/> */}
-          <Route path="/store" element={<Store/>}/>
+          <Route path="/podcast/store" element={<Store/>}/>
         </Routes>
       </BrowserRouter>
     </>

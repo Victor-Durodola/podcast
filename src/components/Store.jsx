@@ -2,7 +2,7 @@
 export default function Store() {
   return (
     <div>
-      Store
+      Store comming soon
     </div>
   )
 }
