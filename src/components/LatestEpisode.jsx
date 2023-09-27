@@ -10,7 +10,7 @@ export default function LatestEpisode() {
               </div>
               <h1 className="episode-num">Episode #144</h1>
               <div className="player">
-                <ReactAudioPlayer className="audio-player" src="../src/assets/audio/Suzume.mp3" controls />
+                <ReactAudioPlayer className="audio-player" src="./src/assets/audio/Suzume.mp3" controls />
               </div>
             </div>
         </div>
@@ -22,7 +22,7 @@ export default function LatestEpisode() {
               sit necessitatibus doloribus architecto deserunt nemo libero odio inventore debitis, numquam
               dolor et quod ut! Amet molestias itaque adipisci.
           </p>
-          <Link to={"/episodes"} ><button className="more-episode-btn">More Episodes</button></Link>
+          <Link to={"/podcast/episodes"} ><button className="more-episode-btn">More Episodes</button></Link>
         </div>
       </div>
     </>

@@ -8,13 +8,13 @@ export default function Navbar() {
     <>
         <nav>
           <div className="home">
-            <Link to={"/"} className='home-btn link'>Journey Podcast</Link>
+            <Link to={"/podcast"} className='home-btn link'>Journey Podcast</Link>
           </div>
           <div className="menu">
             <div className="menu-links">
-              <Link to={"/episodes"} className='link episode-link'>Episodes</Link>
+              <Link to={"/podcast/episodes"} className='link episode-link'>Episodes</Link>
               {/* <Link to={"/articles"} className='link article-link'>Article</Link> */}
-              <Link to={"/store"} className='link store-link'>
+              <Link to={"/podcast/store"} className='link store-link'>
                 <button className='store-btn'>
                   <span className="material-symbols-outlined">shopping_cart</span>
                 </button>
@@ -25,8 +25,8 @@ export default function Navbar() {
             </label>
 
             <div className="collapsed-menu">
-              <Link to={"/articles"} className='link'>Article</Link>
-              <Link to={"/store"} className='link collapsible-store-btn'>Store</Link>
+              <Link to={"/podcast/articles"} className='link'>Article</Link>
+              <Link to={"/podcast/store"} className='link collapsible-store-btn'>Store</Link>
             </div>
           </div>
 
