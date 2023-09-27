@@ -10,7 +10,7 @@ export default function LatestEpisode() {
               </div>
               <h1 className="episode-num">Episode #144</h1>
               <div className="player">
-                <ReactAudioPlayer className="audio-player" src="src/assets/audio/Suzume.mp3" controls />
+                <ReactAudioPlayer className="audio-player" src="https://github.com/Victor-Durodola/podcast/blob/main/src/assets/audio/Suzume.mp3" controls />
               </div>
             </div>
         </div>
