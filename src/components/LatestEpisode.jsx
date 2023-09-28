@@ -22,7 +22,7 @@ export default function LatestEpisode() {
               sit necessitatibus doloribus architecto deserunt nemo libero odio inventore debitis, numquam
               dolor et quod ut! Amet molestias itaque adipisci.
           </p>
-          <Link to={"/podcast/episodes"} ><button className="more-episode-btn">More Episodes</button></Link>
+          <Link to={"/podcast/episodes"} className="link"><button className="more-episode-btn">More Episodes</button></Link>
         </div>
       </div>
     </>
