@@ -28,7 +28,7 @@ export function AudioItem (props) {
 export default function Episodes() {
   const [catalogue, setCatalogue] = useState([{"name": "f", "file": "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3", "duration":"2","episode": "2"}])
   const [selectedAudio, setSelectedAudio] = useState({"episode" : "12", "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3"})
-  const url = 'https://github.com/Victor-Durodola/podcast/raw/main/src/data.json'
+  const url = 'src/data.json'
 
   function selectAudio(episode, file) {
     setSelectedAudio({
