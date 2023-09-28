@@ -11,10 +11,12 @@ export default function NewsletterSignUp() {
             <h1>Join our newsletter</h1>
             <h2 className='sub-heading'>get weekly access to our latest updates and deals</h2>
             <form action="" className='form'>
-                <label htmlFor="email">
-                    <input type="email" name="email" id="email" />
-                </label>
-                <button>Join</button>
+                <div className="form-input">
+                  <label htmlFor="email" className='email-label'>
+                      <input type="email" name="email" id="email" />
+                  </label>
+                  <button className='form-btn'>Join</button>
+                </div>
             </form>
             <p className='advice'>No spam, we hate it more than you do</p>
           </div>

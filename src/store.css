@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Poppins:wght@300;400;600;800&family=Roboto:wght@300;400;700&display=swap');
+
+:root{
+    --text-primary:rgb(26, 6, 6);
+    --background-primary:rgb(116, 2, 2);
+
+    --bar-width: 30px;
+    --bar-height: 4px;
+    --bar-gap: 4px;
+    --total-height: calc(var(--bar-height) * 3 + var(--bar-gap) * 2);
+
+    --animation-timing: 200ms ease-in-out;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.store-container {
+    width: 100%;
+    padding: 5rem 1rem 1rem;
+}

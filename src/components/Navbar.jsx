@@ -25,7 +25,7 @@ export default function Navbar() {
             </label>
 
             <div className="collapsed-menu">
-              <Link to={"/podcast/articles"} className='link'>Article</Link>
+              <Link to={"/podcast/episodes"} className='link'>Episodes</Link>
               <Link to={"/podcast/store"} className='link collapsible-store-btn'>Store</Link>
             </div>
           </div>

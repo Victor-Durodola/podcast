@@ -67,4 +67,16 @@
         flex-flow: column-reverse;
         gap: 2rem;
     }
+
+    .media-player {
+        width: 300px;
+    }
+
+    .card {
+        height: 300px;
+    }
+
+    .episode-list {
+        width: calc(100%);
+    }
 }

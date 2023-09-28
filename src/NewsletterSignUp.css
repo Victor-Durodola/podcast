@@ -64,16 +64,29 @@
     margin-top: .2rem;
 }
 
+.form-input {
+    margin: 1rem 0 .5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* .email-label {
+    height: max-content;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+} */
+
 .inner-wrapper input {
-    width: 65%;
+    width: 100%;
     padding: .5rem;
-    margin: 2rem 0 1rem;
     border: none;
     border-radius: 5px 0 0 5px;
 }
 
 .inner-wrapper button {
     width: 5rem;
+    height: 2rem;
     padding: .5rem;
     text-transform: uppercase;
     background-color: lightsalmon;
@@ -86,6 +99,12 @@
     cursor: pointer;
     background-color: var(--text-primary);
     color: lightsalmon;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .advice {

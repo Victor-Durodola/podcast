@@ -48,6 +48,10 @@ nav {
     color: black;
 }
 
+.link button {
+    color: black;
+}
+
 
 .menu {
     display: flex;

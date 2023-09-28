@@ -1,8 +1,8 @@
-
+import '../store.css'
 export default function Store() {
   return (
-    <div>
-      Store comming soon
+    <div className='store-container'>
+      <h1>Store is comming soon</h1>
     </div>
   )
 }

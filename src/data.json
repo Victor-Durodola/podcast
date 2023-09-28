@@ -1,31 +1,31 @@
 [
     {
         "name" : "When I get old",
-        "file" : "src/assets/audio/Christopher-When-I-Get-Old.mp3",
+        "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/Christopher-When-I-Get-Old.mp3",
         "episode" : "12",
         "duration" : "3:15"
     },
     {
         "name" : "Video game",
-        "file" : "src/assets/audio/Lana-Del-Rey-Video-Games.mp3",
+        "file" : " https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/Lana-Del-Rey-Video-Games.mp3",
         "episode" : "114",
         "duration" : "4:39"
     },
     {
         "name" : "Human nature",
-        "file" : "src/assets/audio/Michael-Jackson-Human-Nature.mp3",
+        "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/Michael-Jackson-Human-Nature.mp3",
         "episode" : "154",
         "duration" : "4:06"
     }, 
     {
         "name" : "Suzume",
-        "file" : "src/assets/audio/Suzume.mp3",
+        "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/Suzume.mp3",
         "episode" : "112",
         "duration" : "4:30"
     },
     {
         "name" : "High et Monalis",
-        "file" : "src/assets/audio/High-et-Monalis-Mashup.mp3",
+        "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/High-et-Monalis-Mashup.mp3",
         "episode" : "67",
         "duration" : "2:50"
     }
