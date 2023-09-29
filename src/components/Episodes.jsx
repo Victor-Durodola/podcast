@@ -1,9 +1,10 @@
 import '../latestEpisode.css'
 import '../episodes.css'
+import data from '../data.json'
 
 import PropTypes from 'prop-types'
 import ReactAudioPlayer from 'react-audio-player'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 
 export function AudioItem (props) {
   function myFunction() {
@@ -26,9 +27,9 @@ export function AudioItem (props) {
 }
 
 export default function Episodes() {
-  const [catalogue, setCatalogue] = useState([{"name": "f", "file": "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3", "duration":"2","episode": "2"}])
+  //const [catalogue, setCatalogue] = useState([{"name": "f", "file": "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3", "duration":"2","episode": "2"}])
   const [selectedAudio, setSelectedAudio] = useState({"episode" : "12", "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3"})
-  const url = './src/data.json'
+  //const url = './src/data.json'
 
   function selectAudio(episode, file) {
     setSelectedAudio({
@@ -37,7 +38,7 @@ export default function Episodes() {
     })
   }
 
-  let allAudio = catalogue.map(item => {
+  let allAudio = data.map(item => {
     return <AudioItem key={item.name} 
                       name={item.name} 
                       file={item.file} 
@@ -46,18 +47,18 @@ export default function Episodes() {
                       handleClick={()=>{selectAudio(item.episode, item.file)}}/> 
   })
 
-  useEffect(()=>{
-    async function getData() {
-      try {const response = await fetch(url)
-      const data = await response.json()
-      setCatalogue (data)}
-      catch (error){
-        console.error("error");
-      }
-    }
+  // useEffect(()=>{
+  //   async function getData() {
+  //     try {const response = await fetch(url)
+  //     const data = await response.json()
+  //     setCatalogue (data)}
+  //     catch (error){
+  //       console.error("error");
+  //     }
+  //   }
 
-    getData()
-  },[])
+  //   getData()
+  // },[])
   return (
     <div className="episode-container">
       <h1>Episodes</h1>
