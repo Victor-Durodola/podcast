@@ -3,43 +3,44 @@
         "id": 1,
         "name" : "Mug",
         "price" : 15.99,
-        "image" : "./src/assets/images/mug-01.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/mug-01.jpg"
+        
     },
     {
         "id": 2,
         "name" : "Shoe",
         "price" : 80,
-        "image" : "./src/assets/images/shoe-01.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/shoe-01.jpg"
     },
     {
         "id": 3,
         "name" : "Shoe",
         "price" : 159.99,
-        "image" : "./src/assets/images/shoe-02.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/shoe-02.jpg"
     }, 
     {
         "id": 4,
         "name" : "Shoe",
         "price" : 67.99,
-        "image" : "./src/assets/images/shoe-03.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/shoe-03.jpg"
     }, 
     {
         "id": 5,
         "name" : "pillow",
         "price" : 32,
-        "image" : "./src/assets/images/pillow-01.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/pillow-01.jpg"
     }, 
     {
         "id": 6,
         "name" : "chair",
         "price" : 67,
-        "image" : "./src/assets/images/chair-1.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/chair-1.jpg"
     },
     {
         "id": 7,
         "name" : "shirt",
         "price" : 25,
-        "image" : "./src/assets/images/shirt-01.jpg"
+        "image" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/images/shirt-01.jpg"
     }
 ]
     

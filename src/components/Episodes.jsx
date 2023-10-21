@@ -36,6 +36,15 @@ export default function Episodes() {
   const progressBarRef = useRef()
   const animationRef = useRef()
 
+  useEffect(()=>{
+    
+    const seconds = Math.floor(audioPlyerRef.current.duration);
+    setDuration(seconds) 
+
+    progressBarRef.current.max = seconds
+    
+  },[audioPlyerRef?.current?.loadedmetadata, audioPlyerRef?.current?.readyState])
+
   function selectAudio(episode, file) {
     setSelectedAudio({
       "episode" : episode,
@@ -72,30 +81,13 @@ export default function Episodes() {
     changePlayerCurrentTime()
   }
 
-  const tenLess = (value) => {
-    let time
-    if(value < 10){
-      time = `0${value}`
-    } else {time = value}
 
-    return time
-  }
-
-  const calculateTime = (time) => {
-    let value
-    value = tenLess(time)
-
-    if(time < 60) {
-      value = `00:${tenLess(time)}`
-    }
-    
-    if(time >= 60){
-      value = `${tenLess(Math.floor(time / 60))}:${tenLess((time % 60))}`
-    } else if (time >= 3600) {
-      value = `${tenLess(Math.floor(time / 60))}:${tenLess((time % 60))}`
-    }
-
-    return(value) 
+  const calculateTime = (secs) => {
+    const minutes = Math.floor(secs / 60);
+    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${returnedMinutes}:${returnedSeconds}`;
   }
 
   const backwards =()=> {
@@ -118,14 +110,7 @@ export default function Episodes() {
                       handleClick={()=>{selectAudio(item.episode, item.file)}}/> 
   })
   
-  useEffect(()=>{
-    
-    const seconds = Math.floor(audioPlyerRef.current.duration);
-    setDuration(seconds) 
-
-    progressBarRef.current.max = seconds
-    
-  },[audioPlyerRef?.current?.loadedmetadata, audioPlyerRef?.current?.readyState])
+  
   return (
     <div className="episode-container">
       <h1>Episodes</h1>
@@ -144,7 +129,7 @@ export default function Episodes() {
                 {/* {slider} */}
                 <div className="time-info">
                   <div className="currentTime">{calculateTime(currentTime)}</div>
-                  <div className="duration">{(duration && typeof duration === 'number') && calculateTime(duration)}</div>
+                  <div className="duration">{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
                 </div>
                 <input type="range" min={0} max={100} defaultValue={0} ref={progressBarRef} onChange={changeTime}/>
 
