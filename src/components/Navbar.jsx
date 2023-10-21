@@ -24,10 +24,10 @@ export default function Navbar() {
               <input type="checkbox" />
             </label>
 
-            <div className="collapsed-menu">
+            {/* <div className="collapsed-menu">
               <Link to={"/podcast/episodes"} className='link'>Episodes</Link>
               <Link to={"/podcast/store"} className='link collapsible-store-btn'>Store</Link>
-            </div>
+            </div> */}
           </div>
 
           

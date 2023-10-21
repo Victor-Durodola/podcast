@@ -19,7 +19,168 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    position: relative;
+}
+
+
 .store-container {
     width: 100%;
     padding: 5rem 1rem 1rem;
+    position: relative;
+}
+
+.checkout-btn {
+    padding: .3rem .4rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    position: relative;
+}
+
+/* .checkout-btn::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;    content: '1';
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 3;
+    font-size: .8rem;
+} */
+
+.cartCount {
+    position: absolute;
+    top: 20px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout-btn:hover {
+    background: rgb(226, 226, 226);
+    border-radius: 5px;
+}
+
+.store-contents {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-item {
+    width: 250px;
+    height: max-content;
+    margin: .5rem;
+    padding: .5rem;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-shadow: 0 0px 5px 0 grey;
+}
+
+.product-img {
+    width: 100%;
+    height: 150px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-img:hover {
+    cursor: pointer;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.increase, 
+.decrease {
+    width: 2rem;
+    padding: .1rem .3rem;
+}
+
+.count {
+    padding: 0 .5rem;
+}
+
+.input-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-section {
+    display: flex;
+    margin: 1rem 0rem;
+}
+
+.add-btn {
+    width: max-content;
+    height: max-content;
+    padding: .2rem .5rem;
+    margin: 1rem 0rem;
+}
+
+.remove {
+    width: max-content;
+    height: max-content;
+    padding: .3rem .6rem;
+    margin: 1rem 0rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.add-btn:hover, .remove:hover {
+    cursor: pointer;
+}
+
+.preview {
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: absolute;
+    background: grey;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.preview-cls {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }

@@ -18,8 +18,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {position: relative;}
+
 #root {
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
 }
 

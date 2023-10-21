@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Poppins:wght@300;400;600;800&family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.shoppingCart {
+    width: 350px;
+    height: 100vh;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 5px 0 grey;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: translate 200ms ease-in-out;
+    z-index: 10;
+    overflow-y: scroll;
+}
+
+.cartHeader {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.closeCart {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeCart:hover {
+    cursor: pointer;
+}
+
+.cartBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-left, .details {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.itemName-qty-price {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+span {
+    font-size: .9rem;
+    color: darkslategray;
+}
+
+.cartTotal {
+    float: right;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}

@@ -3,8 +3,9 @@ import '../episodes.css'
 import data from '../data.json'
 
 import PropTypes from 'prop-types'
-import ReactAudioPlayer from 'react-audio-player'
-import {  useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import {BsArrowLeftShort, BsArrowRightShort} from 'react-icons/bs'
+import {FaPlay, FaPause} from 'react-icons/fa'
 
 export function AudioItem (props) {
   function myFunction() {
@@ -27,9 +28,13 @@ export function AudioItem (props) {
 }
 
 export default function Episodes() {
-  //const [catalogue, setCatalogue] = useState([{"name": "f", "file": "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3", "duration":"2","episode": "2"}])
   const [selectedAudio, setSelectedAudio] = useState({"episode" : "12", "file" : "https://github.com/Victor-Durodola/podcast/raw/main/src/assets/audio/ozy.mp3"})
-  //const url = './src/data.json'
+  const [isplaying, setIsPlaying] = useState(false)
+  const [duration, setDuration] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0)
+  const audioPlyerRef = useRef()
+  const progressBarRef = useRef()
+  const animationRef = useRef()
 
   function selectAudio(episode, file) {
     setSelectedAudio({
@@ -38,6 +43,72 @@ export default function Episodes() {
     })
   }
 
+  
+
+  const Play = () => {
+    const prevValue = isplaying
+    setIsPlaying(!isplaying)
+    if (!prevValue) {
+      audioPlyerRef.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying)
+    } else {
+      audioPlyerRef.current.pause();
+      cancelAnimationFrame(animationRef.current)
+    }
+  }
+
+  const changePlayerCurrentTime = () => {
+    setCurrentTime(progressBarRef.current.value)
+  }
+
+  const whilePlaying = () => {
+    progressBarRef.current.value = audioPlyerRef.current.currentTime;
+    changePlayerCurrentTime();
+    animationRef.current = requestAnimationFrame(whilePlaying);
+  }
+
+  const changeTime = () => {
+    audioPlyerRef.current.currentTime = progressBarRef.current.value
+    changePlayerCurrentTime()
+  }
+
+  const tenLess = (value) => {
+    let time
+    if(value < 10){
+      time = `0${value}`
+    } else {time = value}
+
+    return time
+  }
+
+  const calculateTime = (time) => {
+    let value
+    value = tenLess(time)
+
+    if(time < 60) {
+      value = `00:${tenLess(time)}`
+    }
+    
+    if(time >= 60){
+      value = `${tenLess(Math.floor(time / 60))}:${tenLess((time % 60))}`
+    } else if (time >= 3600) {
+      value = `${tenLess(Math.floor(time / 60))}:${tenLess((time % 60))}`
+    }
+
+    return(value) 
+  }
+
+  const backwards =()=> {
+    progressBarRef.current.value = Number(progressBarRef.current.value - 30);
+    changeTime()
+  }  
+  
+  const forwards =()=> {
+    progressBarRef.current.value = Number(progressBarRef.current.value + 30);
+    changeTime()
+  }  
+ 
+  
   let allAudio = data.map(item => {
     return <AudioItem key={item.name} 
                       name={item.name} 
@@ -46,19 +117,15 @@ export default function Episodes() {
                       episode={item.episode} 
                       handleClick={()=>{selectAudio(item.episode, item.file)}}/> 
   })
+  
+  useEffect(()=>{
+    
+    const seconds = Math.floor(audioPlyerRef.current.duration);
+    setDuration(seconds) 
 
-  // useEffect(()=>{
-  //   async function getData() {
-  //     try {const response = await fetch(url)
-  //     const data = await response.json()
-  //     setCatalogue (data)}
-  //     catch (error){
-  //       console.error("error");
-  //     }
-  //   }
-
-  //   getData()
-  // },[])
+    progressBarRef.current.max = seconds
+    
+  },[audioPlyerRef?.current?.loadedmetadata, audioPlyerRef?.current?.readyState])
   return (
     <div className="episode-container">
       <h1>Episodes</h1>
@@ -73,7 +140,20 @@ export default function Episodes() {
               </div>
               <h1 className="episode-num">Episode # {selectedAudio.episode}</h1>
               <div className="player">
-                <ReactAudioPlayer className="audio-player" src={selectedAudio.file} controls />
+                <audio className="audio-player" src={selectedAudio.file} ref={audioPlyerRef} />
+                {/* {slider} */}
+                <div className="time-info">
+                  <div className="currentTime">{calculateTime(currentTime)}</div>
+                  <div className="duration">{(duration && typeof duration === 'number') && calculateTime(duration)}</div>
+                </div>
+                <input type="range" min={0} max={100} defaultValue={0} ref={progressBarRef} onChange={changeTime}/>
+
+                {/* control buttons */}
+                <div className="player-btns">
+                  <button className="back-btn" onClick={backwards}><BsArrowLeftShort />30</button>
+                  <button className="play-btn" onClick={Play}>{isplaying? <FaPause/>: <FaPlay className="playicon"/>}</button>
+                  <button className="forward-btn" onClick={forwards}>30<BsArrowRightShort/></button>
+                </div>
               </div>
             </div>
         </div>
