@@ -11,6 +11,8 @@ export default function LatestEpisode() {
   const progressBarRef = useRef()
   const animationRef = useRef()
 
+  
+
   useEffect(()=>{
     
     const seconds = Math.floor(audioRef.current.duration);

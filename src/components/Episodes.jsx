@@ -32,18 +32,18 @@ export default function Episodes() {
   const [isplaying, setIsPlaying] = useState(false)
   const [duration, setDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
-  const audioPlyerRef = useRef()
+  const audioPlayerRef = useRef()
   const progressBarRef = useRef()
   const animationRef = useRef()
 
   useEffect(()=>{
     
-    const seconds = Math.floor(audioPlyerRef.current.duration);
+    const seconds = Math.floor(audioPlayerRef.current.duration);
     setDuration(seconds) 
 
     progressBarRef.current.max = seconds
     
-  },[audioPlyerRef?.current?.loadedmetadata, audioPlyerRef?.current?.readyState])
+  },[audioPlayerRef?.current?.loadedmetadata, audioPlayerRef?.current?.readyState])
 
   function selectAudio(episode, file) {
     setSelectedAudio({
@@ -58,10 +58,10 @@ export default function Episodes() {
     const prevValue = isplaying
     setIsPlaying(!isplaying)
     if (!prevValue) {
-      audioPlyerRef.current.play();
+      audioPlayerRef.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying)
     } else {
-      audioPlyerRef.current.pause();
+      audioPlayerRef.current.pause();
       cancelAnimationFrame(animationRef.current)
     }
   }
@@ -71,13 +71,13 @@ export default function Episodes() {
   }
 
   const whilePlaying = () => {
-    progressBarRef.current.value = audioPlyerRef.current.currentTime;
+    progressBarRef.current.value = audioPlayerRef.current.currentTime;
     changePlayerCurrentTime();
     animationRef.current = requestAnimationFrame(whilePlaying);
   }
 
   const changeTime = () => {
-    audioPlyerRef.current.currentTime = progressBarRef.current.value
+    audioPlayerRef.current.currentTime = progressBarRef.current.value
     changePlayerCurrentTime()
   }
 
@@ -125,7 +125,7 @@ export default function Episodes() {
               </div>
               <h1 className="episode-num">Episode # {selectedAudio.episode}</h1>
               <div className="player">
-                <audio className="audio-player" src={selectedAudio.file} ref={audioPlyerRef} />
+                <audio className="audio-player" src={selectedAudio.file} ref={audioPlayerRef} />
                 {/* {slider} */}
                 <div className="time-info">
                   <div className="currentTime">{calculateTime(currentTime)}</div>
